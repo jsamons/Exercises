@@ -1,0 +1,16 @@
+﻿li {
+    list-style-type:none;
+}
+
+#fizz {
+    font-size: 15px;
+    color:blue;
+}
+#buzz{
+    font-size: 15px;
+    color:red;
+}
+#fizzbuzz{
+    font-size:25px;
+    color:purple;
+}

@@ -1,0 +1,52 @@
+﻿@model Exercises.Web.Models.FizzBuzz
+@{
+    ViewBag.Title = "FizzBuzz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FizzBuzz Revisited</h2>
+<br />
+@using (Html.BeginForm("FizzBuzzDisplay", "FizzBuzz", FormMethod.Get))
+{
+    <div class="fizzBuzzForm">
+        <div class="formInputGroup">
+            @Html.Label("Divisor1", "Divisable By:") <br />
+            @Html.TextBoxFor(m => m.Divisor1, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("Divisor2", "Divisable By:")<br />
+            @Html.TextBoxFor(m => m.Divisor2, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("AltFizz", "Alternative Fizz:")<br />
+            @Html.TextBoxFor(m => m.AltFizz, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("AltBuzz", "Alternative Buzz:")<br />
+            @Html.TextBoxFor(m => m.AltBuzz, new { required = "required" })
+        </div>
+        <br />
+
+        <div class="formInputGroup">
+            @Html.Label("ListOfNums", "Number 1:")
+            @Html.TextBoxFor(m => m.ListOfNums, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("ListOfNums", "Number 2:")
+            @Html.TextBoxFor(m => m.ListOfNums, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("ListOfNums", "Number 3:")
+            @Html.TextBoxFor(m => m.ListOfNums, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("ListOfNums", "Number 4:")
+            @Html.TextBoxFor(m => m.ListOfNums, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("ListOfNums", "Number 5:")
+            @Html.TextBoxFor(m => m.ListOfNums, new { required = "required" })
+        </div>
+        <button type="submit">Submit</button>
+    </div>
+}

@@ -1,0 +1,40 @@
+﻿@model List<string>
+
+@{
+    ViewBag.Title = "BabyLottoResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Baby Lotto</h2>
+
+@foreach(string lotto in Model)
+{
+    int score = 0;
+    string[] array = lotto.Split(',');
+    List<int> list = new List<int>();
+    foreach(string str in array)
+    {
+        list.Add(int.Parse(str));
+    }
+
+    if(list[0]==list[1] && list[1]==list[2])
+    {
+        score = 20;
+    }
+    else if(list[0]==list[1] ^ list[1]==list[2] ^ list[0]==list[2])
+    {
+        score = 10;
+    }
+    if(score==20)
+    {
+        <p style="color:green">@list[0],@list[1],@list[2]</p>
+    }
+    else if(score==10)
+    {
+        <p style="color:silver">@list[0],@list[1],@list[2]</p>
+    }
+    else
+    {
+        <p>@list[0],@list[1],@list[2]</p>
+    }
+}

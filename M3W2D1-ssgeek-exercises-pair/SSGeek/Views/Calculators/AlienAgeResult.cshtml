@@ -1,0 +1,16 @@
+﻿@model SSGeek.Models.AlienAgeModel
+
+@{
+    ViewBag.Title = "Alien Age Calculator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2>Alien Age Calculator</h2>
+
+<div>
+    <img src="~/Content/img/@(Model.PlanetName).jpg" />
+</div>
+<div>
+    If you are @Model.Age on planet Earth then you are @Model.AlienAge years old on @(Model.PlanetName).
+</div>

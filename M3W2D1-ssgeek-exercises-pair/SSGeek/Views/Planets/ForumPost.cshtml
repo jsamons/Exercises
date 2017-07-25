@@ -1,0 +1,29 @@
+﻿@model SSGeek.Models.ForumPost
+@using SSGeek.Models;
+
+@{
+    ViewBag.Title = "Forum Post Maker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Geek Post</h2>
+
+@using (Html.BeginForm("ForumPostResult", "Planets", FormMethod.Post))
+{
+    <div class="formInputGroup">
+        @Html.Label("Username", "Username")
+        @Html.TextBoxFor(m => m.Username)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Subject", "Subject")
+        @Html.TextBoxFor(m => m.Subject)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Message", "Message")
+        @Html.TextBoxFor(m => m.Message)
+    </div>
+
+    <button class="submit">Submit</button>
+}
+
+

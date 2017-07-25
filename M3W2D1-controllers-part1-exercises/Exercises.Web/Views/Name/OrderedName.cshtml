@@ -1,0 +1,35 @@
+﻿@model Exercises.Web.Models.Name
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Enter Name</h2>
+@using (Html.BeginForm("OrderedNameResult", "Name", FormMethod.Get))
+{
+    <div class="nameForm">
+        <div class="formInputGroup">
+            @Html.Label("FirstName", "First Name:") <br />
+            @Html.TextBoxFor(m => m.FirstName, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("MiddleInitial", "Middle Initial:") <br />
+            @Html.TextBoxFor(m => m.MiddleInitial)
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("LastName", "Last Name:")<br />
+            @Html.TextBoxFor(m => m.LastName, new { required = "required" })
+        </div>
+        <h2>Choose Order</h2>
+        <div class="formInputGroup">
+            @Html.RadioButton("Order", 1, true) First MI Last <br />
+            @Html.RadioButton("Order", 2) First Last <br />
+            @Html.RadioButton("Order", 3) Last, First MI <br />
+            @Html.RadioButton("Order", 4) Last, First <br />
+        </div>
+
+        <button class="formSubmitButton">Submit</button>
+    </div>
+}
+
+                                                               

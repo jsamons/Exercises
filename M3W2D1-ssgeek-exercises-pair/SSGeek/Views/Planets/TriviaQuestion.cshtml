@@ -1,0 +1,27 @@
+﻿@model SSGeek.Models.TriviaModel
+@using SSGeek.Models;
+
+@{
+    ViewBag.Title = "Trivia Question";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Space Geek Trivia</h2>
+
+@using (Html.BeginForm("TriviaQuestionResult", "Planets", FormMethod.Post))
+{
+    <div class="formInputGroup">
+        @Html.Label("Name", "Please enter your name")
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+
+    <div class="formInputGroup">
+        Who First Walked on the Moon?
+        @Html.RadioButton("SubmittedAnswer", "Tom Hanks") Tom Hanks
+        @Html.RadioButton("SubmittedAnswer", "Jim Lovell") Jim Lovell
+        @Html.RadioButton("SubmittedAnswer", "Neil Armstrong") Neil Armstrong
+    </div>
+
+    <button type="submit" class="submit">Submit</button>
+}
+

@@ -1,0 +1,32 @@
+﻿@using FormsWithHttpPost.Models
+@model Review
+@{
+    ViewBag.Title = "Review";
+}
+
+<h2>New Book Review</h2>
+
+@using (Html.BeginForm("Review", "Home", FormMethod.Post))
+{
+    <div class="formInputGroup">
+        @Html.Label("Username", "Enter your username: ")
+        @Html.TextBoxFor(m => m.Username)
+
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Rating", "How many stars?: ")
+        @Html.TextBoxFor(m => m.Rating)
+
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Title", "Provide a title: ")
+        @Html.TextBoxFor(m => m.Title)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Message", "Review: ")
+        @Html.TextAreaFor(m => m.Message)
+    </div>
+
+    <button type="submit" class="submit">Submit</button>
+}
+

@@ -1,0 +1,29 @@
+﻿@model Exercises.Web.Models.Name
+@{
+    ViewBag.Title = "ColorizedName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ColorizedName</h2>
+@using (Html.BeginForm("ColorizedNameResult", "Name", FormMethod.Get))
+{
+    <div class="nameForm">
+        <div class="formInputGroup">
+            @Html.Label("FirstName", "First Name:") <br />
+            @Html.TextBoxFor(m => m.FirstName, new { required = "required" })
+        </div>
+        <div class="formInputGroup">
+            @Html.Label("LastName", "Last Name:")<br />
+            @Html.TextBoxFor(m => m.LastName, new { required = "required" })
+        </div>
+        <br />
+        <h2> Choose Color</h2>
+        <input type="checkbox" name="Red" value="red"/> Red <br />
+        <input type="checkbox" name="Blue" value="blue" /> Blue <br />
+        <input type="checkbox" name="Green" value="green" /> Green <br />
+        <br />
+        <button class="formSubmitButton">Submit</button>
+    </div>
+}
+
+

@@ -1,0 +1,16 @@
+﻿@using SSGeek.Models;
+@model SSGeek.Models.AlienWeightModel
+
+@{
+    Layout = Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Alien Weight Calculator";
+}
+
+<h2>Alien Weight Calculator</h2>
+
+<div>
+    <img src="~/Content/img/@(Model.PlanetName).jpg" />
+</div>
+<div>
+    If you are @Model.EarthWeight lbs. on planet Earth then you are @Model.AlienWeight lbs. on @(Model.PlanetName).
+</div>

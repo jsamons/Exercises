@@ -1,0 +1,23 @@
+﻿@using SSGeek.Models;
+@model SSGeek.Models.AlienWeightModel
+
+@{
+    Layout = Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Alien Weight Calculator";
+}
+
+<h2>Alien Weight Calculator</h2>
+
+@using (Html.BeginForm("AlienWeightResult", "Calculators", FormMethod.Get))
+{
+    <div class="formInputGroup">
+        @Html.Label("GravityFactor", "Choose a Planet")
+        @Html.DropDownListFor(m => m.GravityFactor, AlienWeightModel.Planets)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("EarthWeight", "Enter your Earth Weight")
+        @Html.TextBoxFor(m => m.EarthWeight)
+    </div>
+
+    <button class="formSubmitButton">Calculate Weight!!!!</button>
+}

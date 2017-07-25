@@ -1,0 +1,18 @@
+﻿@model bool
+@{
+    ViewBag.Title = "CigarPartyResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model)
+{
+    <h2>Great Party!!!</h2>
+    <div><img src="~/Content/happy-squirrel.png" /></div>
+}
+else
+{
+    <h2>Ugh!!!</h2>
+    <div><img src="~/Content/sad-squirrel.png" /></div>
+}
+
+

@@ -1,0 +1,45 @@
+﻿div{
+    text-align:center;
+}
+blockquote {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+.basic_border hr{
+    border: 1px solid blue;
+}
+.premium_border hr{
+    border: 1px solid green;
+}
+.pro_border hr{
+    border: 1px solid red;
+}
+#impact img{
+    width: 100%;
+    position: relative;
+}
+.basic{
+    background-color:blue;
+    color:white;
+}
+.premium{
+    background-color:green;
+    color:white;
+}
+.pro{
+    background-color:red;
+    color:white;
+}
+.signup{
+    color:white;
+}
+.jumbotron {
+    color:white;
+    background-position:center;
+    background-image: url('img/te_present_1600x1060.jpg');
+}
+.glyphicon{
+    font-size:50px;
+}

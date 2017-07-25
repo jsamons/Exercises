@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FizzBuzz</title>
+    <link rel="stylesheet" href="~/Content/Fibonacci.css" />
+</head>
+<body>
+    <h2>Fibonnaci 25</h2>
+
+    @{int[] fibonnaci = new int[25]; }
+
+    <div>
+        <ul>
+        @for (int x = 1; x <= 25; x++)
+        {
+            if (x == 1)
+                {
+                    fibonnaci[0] = 1;
+                    <li>@fibonnaci[0]</li>
+                }
+                else if (x == 2)
+                {
+                    fibonnaci[1] = 2;
+                    <li>@fibonnaci[1]</li>
+                }
+                else
+                {
+                    fibonnaci[x - 1] = fibonnaci[x - 2] + fibonnaci[x - 3];
+                    <li>@fibonnaci[x - 1]</li>
+                }
+            }
+        </ul>
+    </div>
+</body>
+</html>

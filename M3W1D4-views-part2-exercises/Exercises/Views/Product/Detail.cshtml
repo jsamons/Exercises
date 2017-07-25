@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Exercises.Models;
+@model Exercises.Models.Product
+<div id="detailFlexbox">
+    <div id="detailImage">
+        <img id="detailPic" src="~/Content/images/@(Model.ImageName)" />
+    </div>
+    <div id="detailTable">
+        <table class="theTable">
+            <tr>
+                <td class="detailName">
+                    <strong>@Model.Name</strong>
+                    @if (Model.IsTopSeller == true)
+                    {
+                        <span class="bestseller"><strong>Best Seller!</strong></span>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    by @Model.Manufacturer
+                </td>
+            </tr>
+            <tr>
+
+                @if (Model.AverageRating > 4.4)
+                {
+                    <td>
+                        <img class="rating" src="~/Content/images/5-star.png" />
+                    </td>
+                }
+                else if (Model.AverageRating > 3.4)
+                {
+                    <td>
+                        <img class="rating" src="~/Content/images/4-star.png" />
+                    </td>
+                }
+                else if (Model.AverageRating > 2.4)
+                {
+                    <td>
+                        <img class="rating" src="~/Content/images/3-star.png" />
+                    </td>
+                }
+                else if (Model.AverageRating > 1.4)
+                {
+                    <td>
+                        <img class="rating" src="~/Content/images/2-star.png" />
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <img class="rating" src="~/Content/images/1-star.png" />
+                    </td>
+                }
+            </tr>
+
+            <tr>
+                <td>
+                    <strong>Weight</strong> @Model.WeightIbLbs lbs
+                </td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td class="detailDescription">
+                    <strong>Description: </strong>@Model.Description
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

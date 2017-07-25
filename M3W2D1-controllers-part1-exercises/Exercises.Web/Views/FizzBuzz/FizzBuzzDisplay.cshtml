@@ -1,0 +1,33 @@
+﻿@model Exercises.Web.Models.FizzBuzz
+@{
+    ViewBag.Title = "FizzBuzz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>FizzBuzz Revisited</h2>
+
+<p>Divisible By: @Model.Divisor1</p>
+<p>Divisible By: @Model.Divisor2</p>
+<p>Divisible By Both: @Model.Divisor1 and @Model.Divisor2</p>
+<br />
+<p>Alternative Fizz: @Model.AltFizz</p>
+<p>Alternative Buzz: @Model.AltBuzz</p>
+<br />
+@foreach(int number in Model.ListOfNums)
+{
+    if(number % Model.Divisor1==0 && number % Model.Divisor2==0)
+    {
+        <p>@number  @Model.AltFizz@Model.AltBuzz</p>
+    }
+    else if(number % Model.Divisor1==0)
+    {
+        <p>@number  @Model.AltFizz</p>
+    }
+    else if (number % Model.Divisor2 == 0)
+    {
+        <p>@number  @Model.AltBuzz</p>
+    }
+    else
+    {
+        <p>@number</p>
+    }
+}

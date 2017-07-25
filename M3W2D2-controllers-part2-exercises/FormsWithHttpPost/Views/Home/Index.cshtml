@@ -1,0 +1,42 @@
+﻿@using FormsWithHttpPost.Models
+@model List<Review>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+
+<div id="bookPic"><img id="pic" src="~/Content/forDummies.png" /></div>
+<h2>Reviews</h2>
+@foreach (Review review in Model)
+{
+    count += 1;
+    if (count % 2 == 0)
+    {
+        <div class="odd">         
+            <p><strong>@review.Title</strong>
+            @for(int x=0;x<=review.Rating;x++)
+            {
+                <span class="star"><img src="~/Content/star.png" /></span>
+            }</p>
+            <p>by @review.Username on @review.ReviewDate</p>
+            <br />
+            <p>@review.Message</p>
+        </div>
+    }
+    else
+    {
+        
+        <div class="even">         
+            <p><strong>@review.Title</strong>
+            @for (int x = 0; x <= review.Rating; x++)
+            {
+                <span class="star"><img src="~/Content/star.png" /></span>
+            }</p>
+            <p>by @review.Username on @review.ReviewDate</p>
+            <br />
+            <p>@review.Message</p>
+        </div>
+    }
+    
+}

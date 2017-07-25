@@ -1,0 +1,17 @@
+﻿@using SSGeek.Models;
+@model SSGeek.Models.AlienTravelModel
+
+@{
+    Layout = Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Alien Travel Calculator";
+    double yearsTravelled = Model.CalculateYearsTraveled();
+}
+
+<h2>Alien Travel Calculator</h2>
+
+<div>
+    <img src="~/Content/img/@(Model.PlanetName.ToLower()).jpg" />
+</div>
+<div>
+    Traveling by @Model.ModeOfTransport.ToLower() you will reach @Model.PlanetName in @Math.Round(yearsTravelled,2) years. You will be @Math.Round((Model.Age + yearsTravelled),2) years old.
+</div>

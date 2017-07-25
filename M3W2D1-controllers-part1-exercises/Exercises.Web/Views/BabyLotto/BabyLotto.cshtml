@@ -1,0 +1,36 @@
+﻿@model List<string>
+
+@{
+    ViewBag.Title = "BabyLotto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Baby Lotto</h2>
+<br />
+<p>Enter three comma deliminated numbers for each ticket.</p>
+
+@using (Html.BeginForm("BabyLottoResult", "BabyLotto", FormMethod.Get))
+{
+    <div class="formInputGroup">
+        @Html.Label("List", "Ticket 1")
+        @Html.TextBoxFor(m => m[0])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Ticket 2:")
+        @Html.TextBoxFor(m => m[1])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Ticket 3:")
+        @Html.TextBoxFor(m => m[2])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Ticket 4:")
+        @Html.TextBoxFor(m => m[3])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Ticket 5:")
+        @Html.TextBoxFor(m => m[4])
+    </div>
+    <br />
+    <button class="formSubmitButton">Submit</button>
+}

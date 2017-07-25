@@ -1,0 +1,38 @@
+﻿@using SSGeek.Models;
+@model List<ForumPost>
+
+
+@{
+    ViewBag.Title = "Space Geek Forum";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 0;
+    string confirmationMessage = Convert.ToString(TempData["ConfirmationMessage"]);
+}
+<h2>Solar System Geek Forum</h2>
+<div class="confmsg">
+    @confirmationMessage
+</div>
+
+<h4><a href="@Url.Action("ForumPost", "Planets")">Post a Message</a></h4>
+<div>
+    @foreach (ForumPost post in Model)
+    {
+        counter += 1;
+        if (counter % 2 == 0)
+        {
+            <div class="even">
+                <p class="subject">@post.Subject</p>
+                <p>by @post.Username on @post.PostDate</p>
+                <p>@post.Message</p>
+            </div>
+        }
+        else
+        {
+            <div class="odd">
+                <p class="subject">@post.Subject</p>
+                <p>by @post.Username on @post.PostDate</p>
+                <p>@post.Message</p>
+            </div>
+        }
+    }
+</div>

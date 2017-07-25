@@ -1,0 +1,48 @@
+﻿@using SSGeek.Models
+@model List<ShoppingCartItem>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    double grandTotal = 0;
+}
+
+@if (Model == null)
+{
+    <h2>Shopping Cart is Empty</h2>
+}
+else
+{
+    <h2>Solar System Geek Gift Shop</h2>
+
+    <div>
+        <table>
+            <thead>
+                <tr class="tablehead-row">
+                    <th class="tabledata"></th>
+                    <th class="tabledata">Name</th>
+                    <th class="three">Price</th>
+                    <th class="three">Qty.</th>
+                    <th class="three">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SSGeek.Models.ShoppingCartItem item in Model)
+                {
+                    <tr class="cartrow">
+                        <td class="tabledata"><img class="tableimg" src="~/Content/img/@item.Product.ImageName" /></td>
+                        <td class="tabledata">@item.Product.Name</td>
+                        <td class="three">$@item.Product.Price</td>
+                        <td class="three">@item.Quantity</td>
+                        <td class="three">$@Math.Round(item.CalculateTotalCost(), 2)</td>
+                    </tr>
+                    grandTotal = grandTotal + Math.Round(item.CalculateTotalCost(), 2);
+                }
+            </tbody>
+        </table>
+        <div class="baskedtotal-div">
+            <p class="baskettotal">
+                <strong>Grand Total</strong> $@grandTotal
+            </p>
+        </div>
+    </div>
+}

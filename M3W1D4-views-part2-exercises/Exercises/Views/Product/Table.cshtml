@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Exercises.Models.Product>
+
+<h2>Toy Department</h2>
+<div id="tableLayout">
+    <table class="tableTable">
+        <tr class="tablePics">
+            <td class="tableFirstColumn"></td>
+            @foreach (Exercises.Models.Product product in Model)
+            {
+                <td>
+                    <a href="@Url.Action("Detail", "Product", new { id = product.ProductId})">
+                        <img class="tablePic" src="~/Content/images/@product.ImageName" />
+                    </a>
+                </td>
+            }
+        </tr>
+        <tr class="bestseller">
+            <td class="tableFirstColumn"></td>
+            @foreach (Exercises.Models.Product product in Model)
+            {
+                if (product.IsTopSeller == true)
+                {
+                    <td>Best Seller!</td>
+                }
+            }
+        </tr>
+        <tr class="tableName">
+                <td class="tableFirstColumn">Name</td>
+                @foreach (Exercises.Models.Product product in Model)
+            {
+                    <td>
+                        <a href="@Url.Action("Detail", "Product", new { id = product.ProductId})">
+                            @product.Name
+                        </a>
+                    </td>
+                }
+</tr>
+        <tr class="tableRating">
+            <td class="tableFirstColumn">Rating</td>
+            @foreach (Exercises.Models.Product product in Model)
+            {
+                <td>
+                    @if (product.AverageRating >= 4.5)
+                {
+                        <img class="tableStars" src="/Content/images/5-star.png" />
+                    }
+                    else if (product.AverageRating >= 3.5)
+                    {
+                        <img class="tableStars" src="/Content/images/4-star.png" />
+                    }
+                    else if (product.AverageRating >= 2.5)
+                    {
+                        <img class="tableStars" src="/Content/images/3-star.png" />
+                    }
+                    else if (product.AverageRating >= 1.5)
+                    {
+                        <img class="tableStars" src="/Content/images/2-star.png" />
+                    }
+                    else
+                    {
+                        <img class="tableStars" src="/Content/images/1-star.png" />
+                    }
+                </td>
+            }
+        </tr>
+        <tr class="tableMfr">
+            <td class="tableFirstColumn">Mfr</td>
+            @foreach (Exercises.Models.Product product in Model)
+            {
+                <td>@product.Manufacturer</td>
+            }
+        </tr>
+        <tr class="tablePrice">
+            <td class="tableFirstColumn">Price</td>
+            @foreach (Exercises.Models.Product product in Model)
+            {
+                <td><strong>$@product.Price</strong></td>
+            }
+        </tr>
+        <tr class="tableWeight">
+            <td class="tableFirstColumn">wt. (in lbs)</td>
+            @foreach (Exercises.Models.Product product in Model)
+            {
+                <td>@product.WeightIbLbs</td>
+            }
+        </tr>
+    </table>
+</div>
+

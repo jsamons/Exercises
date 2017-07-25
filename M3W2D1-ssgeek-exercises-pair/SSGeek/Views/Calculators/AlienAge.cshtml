@@ -1,0 +1,24 @@
+﻿@using SSGeek.Models;
+
+@model SSGeek.Models.AlienAgeModel
+
+@{
+    ViewBag.Title = "Alien Age Calculator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alien Age Calculator</h2>
+
+@using (Html.BeginForm("AlienAgeResult", "Calculators", FormMethod.Get))
+{
+    <div class="formInputGroup">
+        @Html.Label("PlanetFactor", "Choose a Planet")
+        @Html.DropDownListFor(m => m.PlanetFactor, AlienAgeModel.Planets)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Age", "Enter your Earth Age")
+        @Html.TextBoxFor(m => m.Age)
+    </div>
+
+    <button class="formSubmitButton">Calculate Age!!!!</button>
+}

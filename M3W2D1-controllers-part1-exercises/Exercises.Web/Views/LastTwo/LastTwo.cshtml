@@ -1,0 +1,51 @@
+﻿@model List<string>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>LastTwo</h2>
+
+@using (Html.BeginForm("LastTwoResult", "LastTwo", FormMethod.Get))
+{
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 1:")     
+        @Html.TextBoxFor(m => m[0])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 2:")  
+        @Html.TextBoxFor(m => m[1])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 3:")
+        @Html.TextBoxFor(m => m[2])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 4:")  
+        @Html.TextBoxFor(m => m[3])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 5:")  
+        @Html.TextBoxFor(m => m[4])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 6:")  
+        @Html.TextBoxFor(m => m[5])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 7:")  
+        @Html.TextBoxFor(m => m[6])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 8:")  
+        @Html.TextBoxFor(m => m[7])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 9:")  
+        @Html.TextBoxFor(m => m[8])
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("List", "Word 10:")  
+        @Html.TextBoxFor(m => m[10])
+    </div>
+    <button class="formSubmitButton">Submit</button>
+}

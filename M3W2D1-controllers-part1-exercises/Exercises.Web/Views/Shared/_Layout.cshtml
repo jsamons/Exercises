@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MVC Exercise</title>
+    <link rel="stylesheet" href="~/Content/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>MVC Exercise</h1>
+        <p> Howdy. Follow the links to check the different assignments</p>
+    </header>
+    <nav>
+        <ul>
+            <li>@Html.ActionLink("Ordered Name", "OrderedName", "Name")</li>
+            <li>@Html.ActionLink("Colorized Name", "ColorizedName", "Name")</li>
+            <li>@Html.ActionLink("FizzBuzz", "Index", "FizzBuzz")</li>
+            <li>@Html.ActionLink("Last Two", "Index", "LastTwo")</li>
+            <li>@Html.ActionLink("Baby Lotto", "Index", "BabyLotto")</li>
+            <li>@Html.ActionLink("Squirrel Cigar Party", "Index", "CigarParty")</li>
+        </ul>
+    </nav>
+    <section class="centeredPanel">
+        @RenderBody()
+    </section>
+</body>
+</html>

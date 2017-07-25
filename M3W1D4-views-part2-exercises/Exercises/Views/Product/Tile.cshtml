@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Exercises.Models.Product>
+
+<h2>Toy Department</h2>
+<div class="tileFlex">
+    @foreach (Exercises.Models.Product product in Model)
+    {
+        <div class="tileFlexbox">
+            <div class="tileImage">
+                <a href="@Url.Action("Detail", "Product", new { id = product.ProductId})">
+                    <img class="tilePic" src="~/Content/images/@product.ImageName">
+                </a>
+            </div>
+            <div class="tileTable">
+                <table>
+                    <tr>
+                        <td class="tileName">
+                            <a href="@Url.Action("Detail", "Product", new { id = product.ProductId})">
+                                <strong>@product.Name</strong>
+                            </a>
+                            @if (product.IsTopSeller == true)
+                            {
+                                <span class="bestseller"><strong>Best Seller!</strong></span>
+                            }
+                        </td>
+                    </tr>
+                    @if (product.RemainingStock < 5)
+                    {
+                        <tr class="tileQuantity">
+                            <td>Only @product.RemainingStock left!</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td class="tileManufacturer">by @product.Manufacturer</td>
+                    </tr>
+                    <tr>
+                        <td class="tilePrice">$@product.Price</td>
+                    </tr>
+                    <tr>
+                        <td class="tileWeight">
+                            <strong>WEIGHT</strong> @product.WeightIbLbs lbs
+                        </td>
+                    </tr>
+                    <tr>
+
+                        @if (product.AverageRating > 4.4)
+                        {
+                            <td>
+                                <img class="tileRating" src="~/Content/images/5-star.png" />
+                            </td>
+                        }
+                        else if (product.AverageRating > 3.4)
+                        {
+                            <td>
+                                <img class="tileRating" src="~/Content/images/4-star.png" />
+                            </td>
+                        }
+                        else if (product.AverageRating > 2.4)
+                        {
+                            <td>
+                                <img class="tileRating" src="~/Content/images/3-star.png" />
+                            </td>
+                        }
+                        else if (product.AverageRating > 1.4)
+                        {
+                            <td>
+                                <img class="tileRating" src="~/Content/images/2-star.png" />
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <img class="tileRating" src="~/Content/images/1-star.png" />
+                            </td>
+                        }
+                    </tr>
+                </table>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
+

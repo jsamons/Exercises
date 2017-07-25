@@ -1,0 +1,27 @@
+﻿@using SSGeek.Models;
+@model SSGeek.Models.AlienTravelModel
+
+@{
+    Layout = Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Alien Travel Calculator";
+}
+
+<h2>Alien Travel Calculator</h2>
+
+@using (Html.BeginForm("AlienTravelResult", "Calculators", FormMethod.Get))
+{
+    <div class="formInputGroup">
+        @Html.Label("PlanetHolder", "Choose a Planet")
+        @Html.DropDownListFor(m => m.PlanetHolder, AlienTravelModel.Planets)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("TravelHolder", "Choose a mode of transport")
+        @Html.DropDownListFor(m => m.TransportHolder, AlienTravelModel.Transport)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Age", "Enter your Earth Age")
+        @Html.TextBoxFor(m => m.Age)
+    </div>
+
+    <button class="formSubmitButton">Calculate Travel Time!!!!</button>
+}
